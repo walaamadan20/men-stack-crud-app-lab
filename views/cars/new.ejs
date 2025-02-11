@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Job Post</title>
+      <link rel="stylesheet" href="/edit-style.css">
+      <link rel="stylesheet" href="/navbar.css">
+
+
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+  <h1>New Car Insurance</h1>
+  <form action="/cars" method="POST">
+
+        <label for="carBrand">Car Brand:</label>
+        <input type="text" id="carBrand" name="carBrand" required>
+        
+        <label for="carName">Car Name:</label>
+        <input type="text" id="carName" name="carName" required>
+        
+        <label for="carModel">Car Model:</label>
+        <input type="text" id="carModel" name="carModel" required>
+        
+       
+        <label for="carColor">Car Color:</label>
+        <input type="text" id="carColor" name="carColor" required>
+        
+        <label for="carWeight">Car Weight:</label>
+        <input type="number" id="carWeight" name="carWeight" required>
+
+        <label for="currentCarPrice">Car Current Price:</label>
+        <input type="number" id="currentCarPrice" name="currentCarPrice" required>
+
+        <label for="carInsurancePackage">Car Insurance Package:</label>
+        <select id="carInsurancePackage" name="carInsurancePackage" required>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Platinum">Platinum</option>
+        </select>
+
+        <label for="carInsurancePrice">Car Insurance Price:</label>
+        <input type="number" id="carInsurancePrice" name="carInsurancePrice" required>
+
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+

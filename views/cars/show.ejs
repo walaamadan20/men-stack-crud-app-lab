@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Insurance Details</title>
+
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <h1>Car Insurance Details</h1>
+    <h2><%= car.carName %> from <%= car.carBrand %> Model <%= car.carModel %></h2>
+    
+    <table class="car-details">
+        <tr>
+            <td><strong>Car Name:</strong></td>
+            <td><%= car.carName %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Brand:</strong></td>
+            <td><%= car.carBrand %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Model:</strong></td>
+            <td><%= car.carModel %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Color:</strong></td>
+            <td>$<%= car.carColor %></td>
+        </tr>
+        <tr>
+            <td><strong>Current Car Price:</strong></td>
+            <td><%= car.currentCarPrice %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Weight:</strong></td>
+            <td><%= car.carWeight %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Insurance Package:</strong></td>
+            <td><%= car.carInsurancePackage %></td>
+        </tr>
+        <tr>
+            <td><strong>Car Insurance Price:</strong></td>
+            <td><%= car.carInsurancePrice %></td>
+        </tr>
+    </table>
+
+    <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
+        <button>Delete Car</button>
+    </form>
+    
+    <a href="/cars/<%= car._id %>/edit" class="update-link">Update Car</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

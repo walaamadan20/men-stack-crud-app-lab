@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>User page</title>
+    <body>
+
+    </body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <% if (allCars) { %>
+        <ul>
+            <% allCars.forEach((oneCar) => { %>
+                <li>
+                    <a href="/cars/<%= oneCar._id %>">
+                            <p><%= oneCar.carName %> from <%= oneCar.carName %> Model <%= oneCar.carModel %></p>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>

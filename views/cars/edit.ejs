@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Job Post</title>
+      <link rel="stylesheet" href="/edit-style.css">
+      <link rel="stylesheet" href="/navbar.css">
+
+
+</head>
+<body>
+    <%- include('../partials/navbar.ejs') %>
+
+  <h1>Edit <%= currentCar.CarName %> from <%= currentCar.carBrand %></h1>
+  <form action="/cars/<%= currentCar._id %>?_method=PUT" method="POST">
+
+        <label for="carBrand">Car Brand:</label>
+        <input type="text" id="carBrand" value="<%= currentCar.carBrand %>" name="carBrand" required>
+        
+        <label for="carName">Car Name:</label>
+        <input type="text" id="carName" value="<%= currentCar.carName %>" name="carName" required>
+        
+        <label for="carModel">Car Model:</label>
+        <input type="text" id="carModel" value="<%= currentCar.carModel %>" name="carModel" required>
+        
+       
+        <label for="carColor">Car Color:</label>
+        <input type="text" id="carColor" value="<%= currentCar.carColor %>" name="carColor" required>
+        
+        <label for="carWeight">Car Weight:</label>
+        <input type="number" id="carWeight" value="<%= currentCar.carWeight %>" name="carWeight" required>
+
+        <label for="currentCarPrice">Car Current Price:</label>
+        <input type="number" id="currentCarPrice" value="<%= currentCar.currentCarPrice %>" name="currentCarPrice" required>
+
+        <label for="carInsurancePackage">Car Insurance Package:</label>
+        <select id="carInsurancePackage" name="carInsurancePackage" required>
+            <option value="Bronze" <%= currentCar.carInsurancePackage === "Bronze" ? "selected" : "" %>>Bronze</option>
+            <option value="Silver" <%= currentCar.carInsurancePackage === "Silver" ? "selected" : "" %>>Silver</option>
+            <option value="Gold" <%= currentCar.carInsurancePackage === "Gold" ? "selected" : "" %>>Gold</option>
+            <option value="Platinum" <%= currentCar.carInsurancePackage === "Platinum" ? "selected" : "" %>>Platinum</option>
+        </select>
+
+        <label for="carInsurancePrice">Car Insurance Price:</label>
+        <input type="number" id="carInsurancePrice" value="<%= currentCar.carInsurancePrice %>" name="carInsurancePrice" required>
+
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
