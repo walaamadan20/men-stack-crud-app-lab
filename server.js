@@ -36,13 +36,9 @@ app.use(express.static(path.join(__dirname, "public"))); // Serve static files
 
 app.get('/', (req, res) => {
   // Check if the user is signed in
-  if (req.session.user) {
-    // Redirect signed-in users to their applications index
-    res.redirect(`/users/${req.session.user._id}/jobs`);
-  } else {
-    // Show the homepage for users who are not signed in
+ 
     res.render('index.ejs');
-  }
+ 
 });
 
 // =======================
@@ -61,7 +57,7 @@ app.use('/cars', carsController)
 // =======================
 // 5. LISTENING ON PORT 3000
 // =======================
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log('Listening on port 3000');
   });
   
